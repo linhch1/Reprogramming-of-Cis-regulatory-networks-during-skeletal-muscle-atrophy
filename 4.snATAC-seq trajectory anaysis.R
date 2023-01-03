@@ -51,7 +51,7 @@ fit_coefs <- coefficient_table(acc_fits)
 # Subset out the differentially accessible sites with respect to Pseudotime
 pseudotime_terms <- subset(fit_coefs, term == "Pseudotime" & p_value < 0.001)
 saveRDS(pseudotime_terms,file = "pseudotime_terms_p0.001.rds")
-pseudotime_terms <-pseudotime_terms readRDS("pseudotime_terms.rds")
+pseudotime_terms <-readRDS("pseudotime_terms_p0.001.rds")
 head(pseudotime_terms)
 df <- as.data.frame(pseudotime_terms)
 sapply(df, class)
